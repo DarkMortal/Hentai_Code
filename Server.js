@@ -30,8 +30,7 @@ app.post("/sendDATA",(req,res)=>{
         },1000);
     }).catch((err)=>{
         if(err=="More than 30") res.sendFile("./Warning.html",{ root: __dirname });
-        else if(err=="Not Found") res.sendFile("./Error.html",{ root: __dirname });
-        console.error("Error : "+err);
+        else res.sendFile("./Error.html",{ root: __dirname });
     });
 });
 

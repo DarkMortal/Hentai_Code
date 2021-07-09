@@ -39,7 +39,6 @@ async function GetFile(code,pass){
                 fs.unlinkSync('Hentai.pdf');
             },1000);
         }  return Promise.resolve(title);
-   }else return Promise.reject("Not Found");
-}
+}}
 
 module.exports= GetFile;
