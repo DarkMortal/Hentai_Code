@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download with Code</title>
+    <style>
+      .button{
+            background: green; 
+            color: white; 
+            border: none; 
+            font-size: x-large; 
+            border-radius: 5px;
+            outline: none;
+      }
+    </style>
+</head>
+<body bgcolor="#2a2a2e">
+    <script src="page_images/Alert.js"></script>
+    <script>
+          swal({
+          title: "Failed to Download",
+          text: "Sorry, but PDFs more than 30 pages long is not currently supported",
+          icon: "warning",
+          button: "CLOSE"
+          });
+    </script>
+    <div style="text-align: center; display: block; margin: auto; font-family: sans-serif; color: white">
+    <h1><u>Download with Code</u></h1>
+    <form action="/sendDATA" method="POST">
+      <input type="number" name="code" placeholder="Enter the Code" style="padding: 3px; font-size: medium;"><br><br>
+      <input type="password" name="pass" placeholder="Enter the Password" style="padding: 3px; font-size: medium;"><br><br>
+      <input type="submit" value="Get PDF" class="button" onclick="Doing()"> <br><br>
+    </form>
+    <div id="message" style="font-size: medium; color: red;"></div>
+    </div>
+    <script>
+      function Doing(){
+         document.getElementById("message").innerText="Download speed may vary depending on the file size and internet connection"
+      }
+      document.addEventListener("contextmenu",function(arg){
+            arg.preventDefault();
+      });
+    </script>
+</body>
+</html>
